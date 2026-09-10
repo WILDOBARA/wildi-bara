@@ -1,0 +1,104 @@
+---
+title: "Tugas 1 Komputasi Statistika"
+output: html_document
+date: "2026-09-09"
+---
+
+Vektor
+``` 
+1. Vektor Numerik
+v_numerik <- c(31.8, 85.9, 20.3, 74.1, 39.5)
+v_numerik
+
+
+2. Vektor Integer
+v_integer <- c(60L, 10L, 70L, 50L, 20L)
+v_integer
+
+3. Vektor Logical
+v_logical <- c(FALSE, TRUE, TRUE, FALSE, TRUE)
+v_logical
+
+
+4. Vektor Karakter
+Contoh:
+Club_bola <- c("FC Barcelona", "Real Madrid", "Liverpool", "Inter Milan", "Manchester City")
+Club_bola
+```
+
+
+Matrix dan Array
+``` 
+5. Matrix
+
+# Matrix 3x3
+matriks <- matrix(25:50, nrow = 5, ncol = 5)
+matriks
+#(diisi dari atas ke bawah, lalu pindah ke kolom selanjutnya)
+matriks <- matrix(25:50, nrow = 5, ncol = 5, byrow = TRUE)
+matriks
+#(diisi dari kiri ke kanan, lalu turun ke baris selanjutnya)
+nilai <- matrix(c(53, 68, 79, 30, 51, 60, 30, 42, 10), nrow = 3, byrow = TRUE)
+nilai
+# Matrix 4x4
+matriks <- matrix(1:20, nrow = 5, ncol = 4)
+matriks
+```
+
+6. Array
+Array adalah struktur data yang dapat menyimpan data dalam lebih dari dua dimensi
+Contoh:
+```
+data_array <- array(10:21, dim = c(2, 3, 2))
+data_array
+ukuran arraynya 2 × 3 × 2.
+```
+
+7. Data Frame
+
+```
+Toko <- data.frame(
+  Produk = c("Laptop", "HP", "Komputer", "Tablet"),
+  Harga = c(200000, 37000, 50000, 90000),
+  Terjual = c(TRUE, TRUE, FALSE, TRUE),
+  Tersedia = c(TRUE, FALSE, TRUE, TRUE)
+)
+Toko
+```
+
+
+8. List
+
+```
+# List
+data_list <- list(
+# 1. Vektor numerik
+berat_sepatu = c(50.2, 45.5, 60.5, 74.5),
+# 2. Vektor integer
+ukuran_sepatu = c(40L, 38L, 44L, 42L),
+# 3. Data frame
+data_frame = data.frame(
+      Merk = c("Adidas", "Nike", "Puma", "Under Armour"),
+    Harga = c(15000, 5000, 3000, 2000),
+    Diskon = c(TRUE, FALSE, TRUE, FALSE),
+    Tersedia = c(TRUE, TRUE, FALSE, TRUE)
+  ),
+data_list 
+
+# 4. List di dalam list
+list_dalam_list = list(
+# Vektor numerik
+berat = c(100.5, 200.5, 150.5, 250.5),
+# Vektor integer
+stok = c(5L, 10L, 15L, 20L),
+# Data frame
+    data_frame = data.frame(
+      Produk = c("Jersey", "Sepatu", "Topi", "Jaket"),
+      Harga = c(75000, 150000, 50000, 120000),
+      Diskon = c(TRUE, FALSE, TRUE, FALSE),
+      Tersedia = c(TRUE, TRUE, TRUE, FALSE)
+    )
+  )
+)
+data_list
+```
