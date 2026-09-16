@@ -1,0 +1,63 @@
+data <- iris
+print(data)
+
+#1. Tampilkan data sepal.length
+data$Sepal.Length
+
+#2. Sebutkan tipe data tiap kolom
+str(data$Sepal.Length)
+
+#3. Buat variabel baru dengan nama turunan yang berasal/ turunan dari variabel Sepal.Width.
+#Nilai variabel turunan hanya memiliki dua nilai yaitu “Besar” dan “Kecil”. Besar jika Sepal.Width lebih besar dari 3, begitu pula sebaliknya.
+library(dplyr)
+data <- data %>% 
+  mutate(
+    Turunan = ifelse(Sepal.Width > 3, "Besar", "Kecil")
+  )
+head(data)
+
+#Cara alternatif
+data$Turunan <- with(data, ifelse(Sepal.Width > 3, "Besar", "Kecil"))
+head(data)
+
+#4. 
+data <- data %>%
+  rename(Sepal = Turunan)
+head(data)
+
+# Cara alternatif dengan base R (menggunakan names() dan indexing)
+names(data)[names(data) == "Turunan"] <- "Sepal"
+
+head(data)
+
+#5. ambil data sepal besar dan spesies virginica
+virginica_besar <- data [
+  data$Species == "virginica" & data$Sepal == "Besar",
+]
+head(virginica_besar)
+
+# Alternatif
+data_virginica <- filter(data, Sepal == "Besar" & Species == "virginica")
+print(data_virginica)
+
+#6.
+table(data$Species)
+
+#7. 
+data_setosa <- data[data$Species == "setosa", ]
+data_versicolor <- data[data$Species == "versicolor", ]
+data_virginica <- data[data$Species == "virginica", ]
+#Hasil
+head(data_setosa)
+head(data_versicolor)
+head(data_virginica)
+
+#8.
+data_setosa_urut <- data_setosa[order(data_setosa$Sepal.Width), ]
+data_versicolor_urut <- data_versicolor[order(data_versicolor$Sepal.Width), ]
+data_virginica_urut <- data_virginica[order(data_virginica$Sepal.Width), ]
+
+#Hasil
+print(data_setosa_urut)
+print(data_versicolor_urut)
+print(data_virginica_urut)
